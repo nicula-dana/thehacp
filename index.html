@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HACP Roles & Principles</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HACP 1.0 Specification</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,146 +11,142 @@
       background: #fff;
       color: #0f1419;
       margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
       padding: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    h1, h2 {
+    h1, h2, h3 {
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
-    h1 {
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 3rem;
-    }
     details {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin: 1rem 0;
-      overflow: hidden;
-      background: #f9f9f9;
-      transition: all 0.3s ease;
+      margin-bottom: 1rem;
     }
     summary {
-      cursor: pointer;
-      padding: 1rem;
-      background: #f0f0f0;
       font-weight: 600;
-      transition: background 0.2s;
+      cursor: pointer;
+      padding: 0.5rem 0;
     }
-    summary:hover {
-      background: #e0e0e0;
+    p, li {
+      margin: 0.5rem 0;
+      line-height: 1.5;
     }
-    details[open] summary {
-      background: #e8f5fe;
-    }
-    details p {
-      padding: 0 1rem 1rem;
-      margin: 0;
-    }
-    .role-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .role-container {
+      display: flex;
+      flex-wrap: wrap;
       gap: 2rem;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
-    .role-card {
-      background: #f7f9fa;
-      border-radius: 8px;
-      padding: 1rem;
-      border: 1px solid #e1e8ed;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    .role-box {
+      flex: 1 1 300px;
     }
-    .role-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
+    .role-box strong {
+      display: block;
+      margin-bottom: 0.2rem;
     }
-    .role-card p {
-      font-size: 0.95rem;
-      margin: 0;
-      color: #555;
+    .meta, ul {
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Core Principles (HACP)</h1>
-
-    <details><summary>Hybrid Work as Default</summary>
-      <p>Work is distributed across humans and autonomous agents, each contributing unique capabilities.</p>
-    </details>
-
-    <details><summary>Roles as Functions, Not Titles</summary>
-      <p>Responsibilities are dynamically claimed, not statically assigned.</p>
-    </details>
-
-    <details><summary>Flow over Sprints</summary>
-      <p>Work moves in responsive microloops triggered by real-world signals, not fixed time boxes.</p>
-    </details>
-
-    <details><summary>Transparency by Design</summary>
-      <p>Every decision or contribution is traceable and auditable, regardless of origin (human or AI).</p>
-    </details>
-
-    <details><summary>Cognitive Load Awareness</summary>
-      <p>Attention is treated as a finite asset, managed proactively via system-level protocols.</p>
-    </details>
-
-    <details><summary>Trustworthy Autonomy</summary>
-      <p>AI agents must explain their actions and meet trust thresholds for influence.</p>
-    </details>
-
-    <h2>Recommended Role Tokens</h2>
-
-    <div class="role-grid">
-      <div class="role-card">
-        <h3>Initiator (Human)</h3>
-        <p>Proposes or signals new work based on emerging needs or insights.</p>
-      </div>
-      <div class="role-card">
-        <h3>Decider (Human)</h3>
-        <p>Holds decision authority for specific loops or outcomes.</p>
-      </div>
-      <div class="role-card">
-        <h3>Synthesizer (Human)</h3>
-        <p>Integrates input into coherent insight, strategy, or deliverable.</p>
-      </div>
-      <div class="role-card">
-        <h3>Validator (Human)</h3>
-        <p>Confirms or rejects outcomes based on quality, relevance, or impact.</p>
-      </div>
-      <div class="role-card">
-        <h3>Narrator (Human)</h3>
-        <p>Documents progress, lessons learned, and explains decisions.</p>
-      </div>
-      <div class="role-card">
-        <h3>Signal Scanner (Agent)</h3>
-        <p>Continuously monitors data or events for loop-triggering signals.</p>
-      </div>
-      <div class="role-card">
-        <h3>Orchestrator (Agent)</h3>
-        <p>Coordinates actions between humans and other agents.</p>
-      </div>
-      <div class="role-card">
-        <h3>Implementer (Agent)</h3>
-        <p>Executes tasks, scripts, or routines autonomously.</p>
-      </div>
-      <div class="role-card">
-        <h3>Shadow Logger (Agent)</h3>
-        <p>Records behind-the-scenes decisions and actions for auditability.</p>
-      </div>
-      <div class="role-card">
-        <h3>Explainer (Agent)</h3>
-        <p>Renders AI reasoning transparent for human understanding.</p>
-      </div>
-    </div>
+  <h1>HACP 1.0 Specification</h1>
+  <div class="meta">
+    <p><strong>Author:</strong> [Your Full Name]</p>
+    <p><strong>License:</strong> CC BY-NC-SA 4.0</p>
+    <p><strong>Published:</strong> July 2025</p>
   </div>
+
+  <h2>Overview</h2>
+  <p>HACP (Human-Agent Collaboration Protocol) is a modular, open protocol designed to enable effective, high-trust collaboration between humans and AI agents in remote, asynchronous, and dynamic work environments.</p>
+
+  <h2>Core Principles</h2>
+  <details><summary>Hybrid Work as Default</summary><p>Work is distributed across humans and autonomous agents, each contributing unique capabilities.</p></details>
+  <details><summary>Roles as Functions, Not Titles</summary><p>Responsibilities are dynamically claimed, not statically assigned.</p></details>
+  <details><summary>Flow over Sprints</summary><p>Work moves in responsive microloops triggered by real-world signals, not fixed time boxes.</p></details>
+  <details><summary>Transparency by Design</summary><p>Every decision or contribution is traceable and auditable, regardless of origin (human or AI).</p></details>
+  <details><summary>Cognitive Load Awareness</summary><p>Attention is treated as a finite asset, managed proactively via system-level protocols.</p></details>
+  <details><summary>Trustworthy Autonomy</summary><p>AI agents must explain their actions and meet trust thresholds for influence.</p></details>
+
+  <h2>Protocol Structure</h2>
+  <h3>1. Signals</h3>
+  <ul>
+    <li>New data or insight emerges</li>
+    <li>A decision is required</li>
+    <li>A role token is unclaimed</li>
+  </ul>
+
+  <h3>2. Loops</h3>
+  <ul>
+    <li><strong>Discovery Loop:</strong> Insight synthesis and framing</li>
+    <li><strong>Alignment Loop:</strong> Consensus building</li>
+    <li><strong>Delivery Loop:</strong> Build/test/validate</li>
+  </ul>
+
+  <h3>3. Role Tokens</h3>
+  <div class="role-container">
+    <div class="role-box"><strong>Initiator (Human)</strong><span>Proposes new work based on needs or insight</span></div>
+    <div class="role-box"><strong>Decider (Human)</strong><span>Holds decision authority within scope</span></div>
+    <div class="role-box"><strong>Synthesizer (Human)</strong><span>Integrates insight into deliverables</span></div>
+    <div class="role-box"><strong>Validator (Human)</strong><span>Confirms or rejects outcomes</span></div>
+    <div class="role-box"><strong>Narrator (Human)</strong><span>Documents progress and lessons</span></div>
+    <div class="role-box"><strong>Signal Scanner (Agent)</strong><span>Monitors for triggers</span></div>
+    <div class="role-box"><strong>Orchestrator (Agent)</strong><span>Coordinates agents and people</span></div>
+    <div class="role-box"><strong>Implementer (Agent)</strong><span>Executes tasks autonomously</span></div>
+    <div class="role-box"><strong>Shadow Logger (Agent)</strong><span>Records for audit</span></div>
+    <div class="role-box"><strong>Explainer (Agent)</strong><span>Makes AI reasoning understandable</span></div>
+  </div>
+
+  <h3>4. Artifacts</h3>
+  <ul>
+    <li><strong>SAG:</strong> Situational Alignment Graph – live map of project state, tensions, and questions</li>
+    <li><strong>Priority Graph:</strong> Non-linear backlog sorted by urgency</li>
+    <li><strong>Shadow Logs:</strong> Agent suggestion and interaction records</li>
+  </ul>
+
+  <h3>5. Boundaries</h3>
+  <ul>
+    <li>Ethical: fairness, transparency</li>
+    <li>Cognitive: attention and workload limits</li>
+    <li>Technical: data and tools</li>
+  </ul>
+
+  <h2>Advanced Concepts</h2>
+  <h3>Dynamic Role System</h3>
+  <p>Roles can be claimed dynamically by any contributor (human or AI) with the capability, creating modular micro-governance.</p>
+
+  <h3>Agent-Oriented Workflows (AOWs)</h3>
+  <ul>
+    <li>Trigger conditions</li>
+    <li>Required tokens</li>
+    <li>Success criteria</li>
+  </ul>
+
+  <h3>Cognitive Load Contracts (CLCs)</h3>
+  <p>Each participant defines their attention availability; work is routed accordingly.</p>
+
+  <h3>Trust Ledger</h3>
+  <p>Tracks agent reliability and influence. Actions are auditable and explainable.</p>
+
+  <h2>Implementation Guide</h2>
+  <ul>
+    <li>Start Small: Pilot a loop with HACP roles</li>
+    <li>Visualize Everything: Use a live SAG or dashboard</li>
+    <li>Log Transparently: Record all agent interactions</li>
+    <li>Reflect Often: Run mini retrospectives per loop</li>
+    <li>Scale Modularly: Add roles and flows as needed</li>
+  </ul>
+
+  <h2>Licensing & Use</h2>
+  <p>This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</p>
+  <ul>
+    <li>Credit the original creator ([Your Name])</li>
+    <li>Share any derivatives under the same license</li>
+  </ul>
+  <p>Commercial use requires written permission.</p>
+
+  <h2>Attribution</h2>
+  <p>Developed and published by [Your Full Name], 2025.<br>For inquiries or licensing: [Your Contact Email or Website]</p>
 </body>
 </html>
