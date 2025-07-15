@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HACP 1.0 Specification</title>
+  <title>HACP 1.0 – Human-Agent Collaboration Protocol</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,13 +12,24 @@
       color: #0f1419;
       margin: 0;
       padding: 2rem;
-      max-width: 900px;
+      max-width: 880px;
       margin-left: auto;
       margin-right: auto;
     }
     h1, h2, h3 {
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
     }
     details {
       margin-bottom: 1rem;
@@ -26,127 +37,85 @@
     summary {
       font-weight: 600;
       cursor: pointer;
-      padding: 0.5rem 0;
+      padding: 0.25rem 0;
     }
     p, li {
-      margin: 0.5rem 0;
-      line-height: 1.5;
+      margin: 0.4rem 0;
+      line-height: 1.6;
     }
     .role-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1.5rem;
       margin-top: 1rem;
     }
     .role-box {
-      flex: 1 1 300px;
+      flex: 1 1 280px;
     }
     .role-box strong {
       display: block;
-      margin-bottom: 0.2rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
     }
-    .meta, ul {
-      margin-bottom: 1rem;
+    .meta {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+    ul {
+      padding-left: 1.2rem;
     }
   </style>
 </head>
 <body>
   <h1>HACP 1.0 Specification</h1>
   <div class="meta">
-    <p><strong>Author:</strong> [Your Full Name]</p>
-    <p><strong>License:</strong> CC BY-NC-SA 4.0</p>
-    <p><strong>Published:</strong> July 2025</p>
+    Author: [Your Full Name] · License: CC BY-NC-SA 4.0 · Published: July 2025
   </div>
 
   <h2>Overview</h2>
-  <p>HACP (Human-Agent Collaboration Protocol) is a modular, open protocol designed to enable effective, high-trust collaboration between humans and AI agents in remote, asynchronous, and dynamic work environments.</p>
+  <p>HACP (Human-Agent Collaboration Protocol) is an open specification for hybrid teams composed of humans and AI agents working asynchronously, fluidly, and with clear accountability.</p>
 
   <h2>Core Principles</h2>
-  <details><summary>Hybrid Work as Default</summary><p>Work is distributed across humans and autonomous agents, each contributing unique capabilities.</p></details>
-  <details><summary>Roles as Functions, Not Titles</summary><p>Responsibilities are dynamically claimed, not statically assigned.</p></details>
-  <details><summary>Flow over Sprints</summary><p>Work moves in responsive microloops triggered by real-world signals, not fixed time boxes.</p></details>
-  <details><summary>Transparency by Design</summary><p>Every decision or contribution is traceable and auditable, regardless of origin (human or AI).</p></details>
-  <details><summary>Cognitive Load Awareness</summary><p>Attention is treated as a finite asset, managed proactively via system-level protocols.</p></details>
-  <details><summary>Trustworthy Autonomy</summary><p>AI agents must explain their actions and meet trust thresholds for influence.</p></details>
+  <details><summary>Hybrid Work as Default</summary><p>Humans and agents collaborate as peers with complementary skills.</p></details>
+  <details><summary>Roles as Functions, Not Titles</summary><p>Responsibility is claimed per loop, not assigned by hierarchy.</p></details>
+  <details><summary>Flow over Sprints</summary><p>Work adapts to real-world conditions via microloops.</p></details>
+  <details><summary>Transparency by Design</summary><p>Actions and decisions are visible, logged, and auditable.</p></details>
+  <details><summary>Cognitive Load Awareness</summary><p>Agent behavior adjusts based on user attention budgets.</p></details>
+  <details><summary>Trustworthy Autonomy</summary><p>Agents earn influence by being explainable and consistent.</p></details>
 
-  <h2>Protocol Structure</h2>
-  <h3>1. Signals</h3>
-  <ul>
-    <li>New data or insight emerges</li>
-    <li>A decision is required</li>
-    <li>A role token is unclaimed</li>
-  </ul>
-
-  <h3>2. Loops</h3>
-  <ul>
-    <li><strong>Discovery Loop:</strong> Insight synthesis and framing</li>
-    <li><strong>Alignment Loop:</strong> Consensus building</li>
-    <li><strong>Delivery Loop:</strong> Build/test/validate</li>
-  </ul>
-
-  <h3>3. Role Tokens</h3>
+  <h2>Role Tokens</h2>
   <div class="role-container">
-    <div class="role-box"><strong>Initiator (Human)</strong><span>Proposes new work based on needs or insight</span></div>
-    <div class="role-box"><strong>Decider (Human)</strong><span>Holds decision authority within scope</span></div>
-    <div class="role-box"><strong>Synthesizer (Human)</strong><span>Integrates insight into deliverables</span></div>
-    <div class="role-box"><strong>Validator (Human)</strong><span>Confirms or rejects outcomes</span></div>
-    <div class="role-box"><strong>Narrator (Human)</strong><span>Documents progress and lessons</span></div>
-    <div class="role-box"><strong>Signal Scanner (Agent)</strong><span>Monitors for triggers</span></div>
-    <div class="role-box"><strong>Orchestrator (Agent)</strong><span>Coordinates agents and people</span></div>
-    <div class="role-box"><strong>Implementer (Agent)</strong><span>Executes tasks autonomously</span></div>
-    <div class="role-box"><strong>Shadow Logger (Agent)</strong><span>Records for audit</span></div>
-    <div class="role-box"><strong>Explainer (Agent)</strong><span>Makes AI reasoning understandable</span></div>
+    <div class="role-box"><strong>Initiator (Human)</strong><span>Proposes new work</span></div>
+    <div class="role-box"><strong>Decider (Human)</strong><span>Makes final decisions</span></div>
+    <div class="role-box"><strong>Synthesizer (Human)</strong><span>Integrates ideas</span></div>
+    <div class="role-box"><strong>Validator (Human)</strong><span>Assesses quality</span></div>
+    <div class="role-box"><strong>Narrator (Human)</strong><span>Captures and explains</span></div>
+    <div class="role-box"><strong>Signal Scanner (Agent)</strong><span>Watches for triggers</span></div>
+    <div class="role-box"><strong>Orchestrator (Agent)</strong><span>Coordinates collaboration</span></div>
+    <div class="role-box"><strong>Implementer (Agent)</strong><span>Executes tasks</span></div>
+    <div class="role-box"><strong>Logger (Agent)</strong><span>Logs actions</span></div>
+    <div class="role-box"><strong>Explainer (Agent)</strong><span>Makes logic visible</span></div>
   </div>
 
-  <h3>4. Artifacts</h3>
+  <h2>Collaboration Objects</h2>
   <ul>
-    <li><strong>SAG:</strong> Situational Alignment Graph – live map of project state, tensions, and questions</li>
-    <li><strong>Priority Graph:</strong> Non-linear backlog sorted by urgency</li>
-    <li><strong>Shadow Logs:</strong> Agent suggestion and interaction records</li>
-  </ul>
-
-  <h3>5. Boundaries</h3>
-  <ul>
-    <li>Ethical: fairness, transparency</li>
-    <li>Cognitive: attention and workload limits</li>
-    <li>Technical: data and tools</li>
+    <li><strong>SAG:</strong> Situational Alignment Graph</li>
+    <li><strong>Priority Graph:</strong> Live priority flow</li>
+    <li><strong>Shadow Logs:</strong> Agent memory trails</li>
   </ul>
 
   <h2>Advanced Concepts</h2>
+  <h3>Microloops</h3>
+  <p>Every output is a cycle of sense–align–act–reflect.</p>
   <h3>Dynamic Role System</h3>
-  <p>Roles can be claimed dynamically by any contributor (human or AI) with the capability, creating modular micro-governance.</p>
-
-  <h3>Agent-Oriented Workflows (AOWs)</h3>
-  <ul>
-    <li>Trigger conditions</li>
-    <li>Required tokens</li>
-    <li>Success criteria</li>
-  </ul>
-
-  <h3>Cognitive Load Contracts (CLCs)</h3>
-  <p>Each participant defines their attention availability; work is routed accordingly.</p>
-
+  <p>Tokens can be claimed or passed based on trust and context.</p>
   <h3>Trust Ledger</h3>
-  <p>Tracks agent reliability and influence. Actions are auditable and explainable.</p>
+  <p>Track confidence in agent behaviors over time.</p>
+  <h3>CLCs – Cognitive Load Contracts</h3>
+  <p>Human participants define how much attention they can give.</p>
 
-  <h2>Implementation Guide</h2>
-  <ul>
-    <li>Start Small: Pilot a loop with HACP roles</li>
-    <li>Visualize Everything: Use a live SAG or dashboard</li>
-    <li>Log Transparently: Record all agent interactions</li>
-    <li>Reflect Often: Run mini retrospectives per loop</li>
-    <li>Scale Modularly: Add roles and flows as needed</li>
-  </ul>
-
-  <h2>Licensing & Use</h2>
-  <p>This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</p>
-  <ul>
-    <li>Credit the original creator ([Your Name])</li>
-    <li>Share any derivatives under the same license</li>
-  </ul>
-  <p>Commercial use requires written permission.</p>
-
-  <h2>Attribution</h2>
-  <p>Developed and published by [Your Full Name], 2025.<br>For inquiries or licensing: [Your Contact Email or Website]</p>
+  <h2>Use & Licensing</h2>
+  <p>Creative Commons BY-NC-SA 4.0 — Noncommercial use only, share alike, attribute original author.</p>
 </body>
 </html>
