@@ -1,17 +1,18 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The HACP Protocol</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --text: #111;
       --bg: #fff;
-      --primary: #005aa7;
       --muted: #666;
+      --primary: #ff6600;
     }
     body {
       font-family: 'Inter', sans-serif;
@@ -20,140 +21,103 @@
       color: var(--text);
       line-height: 1.6;
     }
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
     .container {
       max-width: 960px;
       margin: auto;
       padding: 2rem 1rem;
     }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
     h2 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
+      margin-top: 2rem;
       margin-bottom: 1rem;
     }
-    section {
-      margin-bottom: 4rem;
+    .accordion {
+      border-top: 1px solid #ddd;
     }
-    .principle {
-      margin-bottom: 1.5rem;
+    details {
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
     }
-    .principle strong {
-      display: block;
+    summary {
+      cursor: pointer;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      list-style: none;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] summary {
+      color: var(--primary);
+    }
+    details p {
+      margin-top: 0.5rem;
+      color: var(--muted);
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
+      margin-top: 1.5rem;
     }
     .card {
-      padding: 1.2rem;
-      background: #f9f9f9;
-      border-radius: 8px;
+      background: #fafafa;
+      border-radius: 6px;
+      padding: 1rem;
     }
     .card h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1.1rem;
+      margin-top: 0;
+      font-size: 1rem;
     }
     .card p {
-      margin: 0;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--muted);
     }
     footer {
-      background: #f1f1f1;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #444;
-    }
-    a {
-      color: var(--primary);
-      text-decoration: none;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Human-Agent Collaboration Protocol (HACP)</h1>
-  <p>A modular framework for high-trust, asynchronous work between humans and AI agents.</p>
-</header>
+  <main class="container">
+    <h1>Human-Agent Collaboration Protocol (HACP)</h1>
+    <p>A framework for collaborative work between humans and intelligent agents. Modular, open, and built for trust.</p>
 
-<main class="container">
-
-  <section>
     <h2>Core Principles</h2>
-    <div class="principle"><strong>Hybrid Work as Default</strong> Work is shared between humans and AI, playing to each strength.</div>
-    <div class="principle"><strong>Roles as Functions, Not Titles</strong> Tasks are claimed fluidly—not assigned permanently.</div>
-    <div class="principle"><strong>Flow Over Sprints</strong> Work emerges responsively via microloops, not rigid schedules.</div>
-    <div class="principle"><strong>Transparency by Design</strong> Every action is traceable—by human or agent.</div>
-    <div class="principle"><strong>Cognitive Load Awareness</strong> Attention is managed and respected by design.</div>
-    <div class="principle"><strong>Trustworthy Autonomy</strong> Agents must explain and justify their decisions clearly.</div>
-  </section>
-
-  <section>
-    <h2>Recommended Roles</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Initiator (Human)</h3>
-        <p>Starts new loops based on insight or need.</p>
-      </div>
-      <div class="card">
-        <h3>Decider (Human)</h3>
-        <p>Owns key decisions for a specific loop.</p>
-      </div>
-      <div class="card">
-        <h3>Synthesizer (Human)</h3>
-        <p>Combines inputs into insight or strategy.</p>
-      </div>
-      <div class="card">
-        <h3>Validator (Human)</h3>
-        <p>Checks outcomes against quality or goals.</p>
-      </div>
-      <div class="card">
-        <h3>Narrator (Human)</h3>
-        <p>Captures and communicates what happened.</p>
-      </div>
-      <div class="card">
-        <h3>Signal Scanner (Agent)</h3>
-        <p>Watches for changes that trigger loops.</p>
-      </div>
-      <div class="card">
-        <h3>Orchestrator (Agent)</h3>
-        <p>Coordinates actions across roles or tools.</p>
-      </div>
-      <div class="card">
-        <h3>Implementer (Agent)</h3>
-        <p>Executes predefined tasks or routines.</p>
-      </div>
-      <div class="card">
-        <h3>Explainer (Agent)</h3>
-        <p>Helps humans understand agent reasoning.</p>
-      </div>
+    <div class="accordion">
+      <details><summary>Hybrid Work as Default</summary><p>Work is shared across humans and agents based on strengths.</p></details>
+      <details><summary>Roles as Functions, Not Titles</summary><p>Dynamic roles adapt to the loop, not the org chart.</p></details>
+      <details><summary>Flow Over Sprints</summary><p>Loops emerge responsively via real-world signals.</p></details>
+      <details><summary>Transparency by Design</summary><p>Every action is logged and attributable.</p></details>
+      <details><summary>Cognitive Load Awareness</summary><p>Participants define how much attention they can give.</p></details>
+      <details><summary>Trustworthy Autonomy</summary><p>Agents must explain their actions to gain trust.</p></details>
     </div>
-  </section>
 
-</main>
+    <h2>Roles</h2>
+    <div class="grid">
+      <div class="card"><h3>Initiator (Human)</h3><p>Starts new loops from insight or needs.</p></div>
+      <div class="card"><h3>Decider (Human)</h3><p>Owns scope-specific decisions.</p></div>
+      <div class="card"><h3>Synthesizer (Human)</h3><p>Integrates inputs into meaning.</p></div>
+      <div class="card"><h3>Validator (Human)</h3><p>Reviews quality or value of outputs.</p></div>
+      <div class="card"><h3>Narrator (Human)</h3><p>Explains process and context.</p></div>
+      <div class="card"><h3>Signal Scanner (Agent)</h3><p>Detects when loops need to begin.</p></div>
+      <div class="card"><h3>Orchestrator (Agent)</h3><p>Coordinates human and agent roles.</p></div>
+      <div class="card"><h3>Implementer (Agent)</h3><p>Executes routines and tasks.</p></div>
+      <div class="card"><h3>Explainer (Agent)</h3><p>Justifies decisions and reasoning.</p></div>
+    </div>
+  </main>
 
-<footer>
-  © 2025 The HACP Project — Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
-</footer>
+  <footer>
+    &copy; 2025 The HACP Project – Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+  </footer>
 
 </body>
 </html>
